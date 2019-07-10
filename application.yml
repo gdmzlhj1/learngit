@@ -1,0 +1,132 @@
+spring.application.name: plat-view
+
+server.servlet.context-path: /plat
+
+<<<<<<< .mine
+=======
+spring.profiles.active: dev
+spring.mvc.view.suffix: .html
+spring.mvc.static-path-pattern: /**
+spring.resources.static-locations: classpath:/view/
+
+>>>>>>> .r10218
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  typeAliasesPackage: com.bmsoft.ai.plat.view.entity
+
+# 人脸识别默认的组id
+face.groupId.default: def_group
+
+eureka.client.serviceUrl.defaultZone: http://10.194.186.152:8761/eureka
+eureka.instance.hostname: ${spring.cloud.client.ip-address}
+eureka.client.healthcheck.enabled: true
+
+#Eureka客户端向服务端发送心跳的时间间隔，单位为秒（客户端告诉服务端自己会按照该规则）
+eureka.instance.lease-renewal-interval-in-seconds: 30
+#Eureka服务端在收到最后一次心跳之后等待的时间上限，单位为秒，超过则剔除（客户端告诉服务端按照此规则等待自己）
+eureka.instance.lease-expiration-duration-in-seconds: 60
+
+# 使用ip进行注册
+eureka.instance.prefer-ip-address: true
+
+# mq配置
+spring.rabbitmq.host: 10.194.186.155
+spring.rabbitmq.port: 5672
+spring.rabbitmq.username: bmsoft
+spring.rabbitmq.password: 123123
+
+# zipkin配置
+spring.sleuth.sampler.probability: 1.0
+
+# 优化性能
+ribbon.eager-load.enabled: true 
+ribbon.eager-load.clients: AUTH-SERVER, SERVICE-OSS 
+
+# 熔断机制
+hystrix.command.default.execution.timeout.enabled: false
+#hystrix.command.default.execution.timeout.enabled: true
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon.ReadTimeout: 60000
+ribbon.ConnectTimeout: 60000
+
+# 数据源配置
+spring.datasource.url: jdbc:oracle:thin:@10.194.186.151:1521:cszn
+spring.datasource.username: htp
+spring.datasource.password: htp
+
+spring.datasource.type: com.alibaba.druid.pool.DruidDataSource
+spring.datasource.driver-class-name: oracle.jdbc.driver.OracleDriver
+
+<<<<<<< .mine
+#session存储类型
+spring.session.store-type: redis
+spring.redis.host: 10.194.186.152
+spring.redis.port: 6379
+
+# zuul配置
+server.servlet.zuul-path: 
+=======
+#session存储类型
+spring.session.store-type: redis
+spring.redis.host: 10.194.186.152
+#spring.redis.host: localhost
+spring.redis.port: 6379
+>>>>>>> .r10218
+
+#文件上传大小限制
+spring.servlet.multipart.max-file-size: 10MB
+spring.servlet.multipart.max-request-size: 100MB
+
+logging.level.com.bmsoft.ai.plat.view.mapper: debug
+logging.level.root: info
+
+# 开发环境
+---
+spring.profiles: dev
+
+<<<<<<< .mine
+server.port: 8100
+
+=======
+server.port: 8100
+>>>>>>> .r10218
+# 注意本地开发使用自己的应用名
+<<<<<<< .mine
+developer: liuhuaju
+spring.application.name: plat-view-${developer}
+=======
+developer: who
+spring.application.name: plat-view-${developer}
+>>>>>>> .r10218
+
+<<<<<<< .mine
+=======
+# 测试环境
+---
+spring.profiles: test
+
+server.servlet.context-path: /plat-test
+
+spring.application.name: plat-view-test
+
+server.port: 8100
+
+>>>>>>> .r10218
+# https配置
+# server.ssl.key-store: classpath:config/keystore.p12
+# server.ssl.key-store-password: 123123
+# server.ssl.key-store-type: PKCS12
+# server.ssl.key-alias: tomcat
+
+<<<<<<< .mine
+
+# 测试环境
+=======
+# 生产环境
+>>>>>>> .r10218
+---
+spring.profiles: prod
+
+server.port: 8100
+
+spring.application.name: plat-view
