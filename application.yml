@@ -2,6 +2,14 @@ spring.application.name: plat-view
 
 server.servlet.context-path: /plat
 
+Git is a distributed version control system.
+Git is free software.
+
+
+Git is a distributed version control system 2.
+Git is free software.
+
+
 <<<<<<< .mine
 =======
 spring.profiles.active: dev
